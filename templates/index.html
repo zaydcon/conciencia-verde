@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConCiencia Verde</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Fondo animado -->
+    <canvas id="fondoHojas"></canvas>
+
+    <header>
+        <h1>🍃 Bienvenido a ConCiencia Verde</h1>
+        <p>Proyecto productivo ecológico en la nube con Python y Render.</p>
+    </header>
+
+    <section class="noticias">
+        <h2>📰 Noticias ecológicas</h2>
+        {% for noticia in noticias %}
+            <article>
+                <h3>{{ noticia.titulo }}</h3>
+                <small>{{ noticia.fecha }}</small>
+                <p>{{ noticia.descripcion }}</p>
+            </article>
+        {% endfor %}
+    </section>
+
+    <script src="{{ url_for('static', filename='js/fondo.js') }}"></script>
+</body>
+</html>
